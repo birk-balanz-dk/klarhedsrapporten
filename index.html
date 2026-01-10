@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klarhedsrapporten — Kommunikationsforensik</title>
+    <meta name="description" content="Forensisk kommunikationsanalyse der viser konsistens, tvetydighed og selvmodsigelser i beskeder og mails. Neutral, struktureret klarhed.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'krf-slate': '#2C3E50',
+                        'krf-steel': '#7F8C8D',
+                        'krf-cream': '#ECF0F1',
+                        'krf-accent': '#34495E'
+                    },
+                    fontFamily: {
+                        'serif': ['Newsreader', 'serif'],
+                        'mono': ['IBM Plex Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        .signal-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .signal-green { background-color: #27ae60; }
+        .signal-yellow { background-color: #f39c12; }
+        .signal-red { background-color: #e74c3c; }
+    </style>
+</head>
+<body class="bg-krf-cream text-krf-slate font-serif">
+    
+    <!-- Header -->
+    <header class="border-b border-krf-steel/20">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="font-mono text-lg tracking-tight">
+                <span class="text-krf-slate font-semibold">KLARHEDSRAPPORTEN</span>
+                <span class="text-krf-steel text-sm ml-2">/ KRF™</span>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm">
+                <a href="#om-metoden" class="hover:text-krf-accent transition-colors">Om metoden</a>
+                <a href="#eksempel" class="hover:text-krf-accent transition-colors">Eksempel</a>
+                <a href="#priser" class="hover:text-krf-accent transition-colors">Priser</a>
+                <a href="#kontakt" class="bg-krf-slate text-krf-cream px-6 py-2 rounded hover:bg-krf-accent transition-colors">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+        <div class="max-w-4xl">
+            <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-8 fade-in-up">
+    Når ordene bliver uklare — <span class="italic">giver</span> kommunikationsforensik <span class="italic">klarheden</span>.
+</h1>
+            <p class="text-xl md:text-2xl text-krf-steel leading-relaxed mb-12 fade-in-up delay-1">
+                Klarhedsrapporten bruger forensisk kommunikationsanalyse til at vise konsistens, tvetydighed og direkte selvmodsigelser i dine beskeder og mails — neutralt, struktureret og let at forstå.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 fade-in-up delay-2">
+                <a href="#kontakt" class="bg-krf-slate text-krf-cream px-8 py-4 rounded text-lg hover:bg-krf-accent transition-colors text-center">
+                    Bestil din Klarhedsrapport
+                </a>
+                <a href="eksempel.html" class="border-2 border-krf-slate text-krf-slate px-8 py-4 rounded text-lg hover:bg-krf-slate hover:text-krf-cream transition-colors text-center">
+                    Se eksempel på rapport
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Separator -->
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="border-t border-krf-steel/20"></div>
+    </div>
+
+    <!-- Who Needs This Section -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="font-serif text-4xl mb-8">Hvem har brug for en Klarhedsrapport?</h2>
+                <p class="text-lg text-krf-steel leading-relaxed mb-8">
+                    Når ordene bliver uklar, eller når din historie omskrives, kan det være umuligt at se mønstrene selv. Du er for tæt på. Du er for træt. Du begynder at tvivle på din egen hukommelse.
+                </p>
+                <p class="text-lg text-krf-steel leading-relaxed">
+                    Det er her, forensisk kommunikationsanalyse giver dig mental suverænitet tilbage.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <div class="border-l-4 border-krf-slate pl-6">
+                    <h3 class="font-mono text-sm uppercase tracking-wide text-krf-steel mb-2">Gaslighting</h3>
+                    <p class="text-lg">Når nogen gradvist får dig til at tvivle på din egen oplevelse af virkeligheden — gennem forskydninger, benægtelser og subtile omskrivninger.</p>
+                </div>
+                <div class="border-l-4 border-krf-slate pl-6">
+                    <h3 class="font-mono text-sm uppercase tracking-wide text-krf-steel mb-2">Falske narrativer</h3>
+                    <p class="text-lg">Når fortællingen om, hvad der skete, ændrer sig over tid — og du står uden dokumentation til at vise, hvordan historien er blevet omskrevet.</p>
+                </div>
+                <div class="border-l-4 border-krf-slate pl-6">
+                    <h3 class="font-mono text-sm uppercase tracking-wide text-krf-steel mb-2">Familie-estrangement</h3>
+                    <p class="text-lg">Når anklager opstår uden dialog, og du ikke får mulighed for at forstå, svare eller afklare, hvad der faktisk er sandt.</p>
+                </div>
+                <div class="border-l-4 border-krf-slate pl-6">
+                    <h3 class="font-mono text-sm uppercase tracking-wide text-krf-steel mb-2">Retrospektiv omfortolkning</h3>
+                    <p class="text-lg">Når din fortid genfortolkes i et nyt narrativ, og tidligere harmoni eller positive relationer pludselig benægtes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="bg-white py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-serif text-4xl mb-4">Hvad du får</h2>
+            <p class="text-xl text-krf-steel mb-16 max-w-2xl">
+                En professionel, farvekodet rapport baseret på en 7‑trins forensisk metode, der tydeligt viser konsistens, tvetydighed og direkte selvmodsigelser.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Color-coded system -->
+                <div>
+                    <div class="mb-4">
+                        <span class="signal-indicator signal-green"></span>
+                        <span class="signal-indicator signal-yellow"></span>
+                        <span class="signal-indicator signal-red"></span>
+                    </div>
+                    <h3 class="font-mono text-lg mb-3">Farvekodet system</h3>
+                    <p class="text-krf-steel leading-relaxed">
+                        <span class="font-mono text-sm">🟢 Konsistent</span> — Udsagn hænger sammen og stemmer overens med tidligere kommunikation<br>
+                        <span class="font-mono text-sm">🟡 Ambiguøs</span> — Kræver fortolkning; uklart eller flertydigt sprog<br>
+                        <span class="font-mono text-sm">🔴 Kontradiktion</span> — Logisk umulighed; to udsagn kan ikke være sande samtidig</p>
+                </div>
+
+                <!-- Timeline reconstruction -->
+                <div>
+                    <div class="font-mono text-3xl mb-4 text-krf-steel">01—07</div>
+                    <h3 class="font-mono text-lg mb-3">7-trins forensisk metode</h3>
+                    <ul class="text-krf-steel leading-relaxed space-y-2">
+                        <li>→ Tidslinje rekonstruktion</li>
+                        <li>→ Sproglig signaturanalyse</li>
+                        <li>→ Narrativ konsistens</li>
+                        <li>→ Intention & undvigelse</li>
+                        <li>→ Forensiske mismatch</li>
+                        <li>→ Mønstergenkendelse</li>
+                        <li>→ Neutral konklusion</li>
+                    </ul>
+                </div>
+
+                <!-- Deliverable -->
+                <div>
+                    <div class="font-mono text-3xl mb-4 text-krf-steel">PDF</div>
+                    <h3 class="font-mono text-lg mb-3">Professionel rapport</h3>
+                    <p class="text-krf-steel leading-relaxed">
+                        Struktureret dokumentation, du kan bruge til din egen forståelse, dele med en terapeut, eller anvende som bilag i en juridisk sammenhæng.
+                    </p>
+                    <p class="text-sm text-krf-steel mt-4 italic">
+                        Dette er ikke terapi. Dette er ikke juridisk rådgivning. Dette er ren kommunikationsanalyse.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+        <h2 class="font-serif text-4xl mb-16">Sådan fungerer det</h2>
+        
+        <div class="space-y-16">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-2">
+                    <div class="font-mono text-5xl text-krf-steel/30">01</div>
+                </div>
+                <div class="md:col-span-10">
+                    <h3 class="font-mono text-xl mb-4">Du sender materiale</h3>
+                    <p class="text-lg text-krf-steel leading-relaxed max-w-3xl">
+                        SMS‑beskeder, mails, Messenger/WhatsApp‑screenshots, tidslinje og relevant kontekst. Alt, der belyser forløbet, kan indgå i analysen. Jo mere dokumentation du sender, desto stærkere og mere præcis bliver den forensiske analyse.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-2">
+                    <div class="font-mono text-5xl text-krf-steel/30">02</div>
+                </div>
+                <div class="md:col-span-10">
+                    <h3 class="font-mono text-xl mb-4">Forensisk analyse gennemføres</h3>
+                    <p class="text-lg text-krf-steel leading-relaxed max-w-3xl">
+                        En systematisk gennemgang af sprog, tone, narrativ, intention og mønstre. Identifikation af konsistens, ambiguitet og direkte selvmodsigelser. Ingen følelser — kun kommunikation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-2">
+                    <div class="font-mono text-5xl text-krf-steel/30">03</div>
+                </div>
+                <div class="md:col-span-10">
+                    <h3 class="font-mono text-xl mb-4">Du modtager din Klarhedsrapport</h3>
+                    <p class="text-lg text-krf-steel leading-relaxed max-w-3xl">
+                        En professionel PDF med farvekodet analyse, tidslinje, mønstergenkendelse og neutral konklusion. Klar, struktureret dokumentation, du både kan forstå og bruge i praksis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Section -->
+    <section id="eksempel" class="bg-krf-slate text-krf-cream py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="font-serif text-4xl mb-6">Se et eksempel</h2>
+                    <p class="text-xl text-krf-cream/80 leading-relaxed mb-8">
+                        Anonymiseret case: En far modtager to beskeder fra sin søn med to måneder imellem. November-beskeden søger "igen harmonisk" relation. Januar-beskeden benægter at harmoni nogensinde fandtes.
+                    </p>
+                    <p class="text-lg text-krf-cream/70 leading-relaxed mb-8">
+                        Klarhedsrapporten dokumenterer det præcise øjeblik, hvor narrativet kollapser — udløst af ét ord: <span class="italic font-mono">"igen"</span>.
+                    </p>
+                    <a href="/eksempel.html" class="inline-block border-2 border-krf-cream text-krf-cream px-8 py-4 rounded text-lg hover:bg-krf-cream hover:text-krf-slate transition-colors">
+                        Læs den fulde case →
+                    </a>
+                </div>
+                <div class="bg-krf-cream/10 p-8 rounded-lg border border-krf-cream/20">
+                    <div class="font-mono text-sm text-krf-cream/60 mb-4">KRITISK FUND</div>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="signal-indicator signal-yellow mt-1"></span>
+                            <div class="text-sm">
+                                <span class="font-mono text-krf-cream/80">27.11.2025:</span>
+                                <p class="text-krf-cream/70 italic">"komme tilbage til harmonien"</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="signal-indicator signal-red mt-1"></span>
+                            <div class="text-sm">
+                                <span class="font-mono text-krf-cream/80">03.01.2026:</span>
+                                <p class="text-krf-cream/70 italic">"Min barndom var præget af vold"</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-krf-cream/20 pt-4 mt-4">
+                            <p class="text-sm text-krf-cream/80 font-mono">
+                                → "igen" forudsætter tidligere harmoni<br>
+                                → Januar benægter harmoni nogensinde fandtes<br>
+                                → <span class="text-red-400">Narrativkollaps</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Method Section -->
+    <section id="om-metoden" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="font-serif text-4xl mb-8">KRF™ Metoden</h2>
+                <p class="text-xl text-krf-steel leading-relaxed mb-6">
+                    Kommunikations‑ & Relationsforensik bygger på systematisk sproganalyse — ikke terapi og ikke juridisk rådgivning.
+                </p>
+                <p class="text-lg text-krf-steel leading-relaxed mb-6">
+                    Metoden udfylder rummet mellem terapeuter (der arbejder med følelser) og jurister (der arbejder med paragraffer). Her analyseres kun én ting:<span class="italic">kommunikationens struktur, logik og mønstre.</span>.
+                </p>
+                <p class="text-lg text-krf-steel leading-relaxed">
+                    Resultatet er mental suverænitet: Du får dokumenteret, hvad der faktisk står — ikke hvad du føler, eller hvad andre påstår.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-lg border border-krf-steel/20">
+                <h3 class="font-mono text-lg mb-6 uppercase tracking-wide">Hvad KRF IKKE er</h3>
+                <ul class="space-y-4 text-krf-steel">
+                    <li class="flex items-start gap-3">
+                        <span class="text-2xl">×</span>
+                        <span><strong>Ikke terapi</strong> — Vi arbejder ikke med følelser eller helingsprocesser</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-2xl">×</span>
+                        <span><strong>Ikke juridisk rådgivning</strong> — Vi fortolker ikke paragraffer og giver ikke juridisk vejledning</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-2xl">×</span>
+                        <span><strong>Ikke mediering</strong> — Vi faciliterer ikke dialog eller forhandling mellem parter</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-2xl">×</span>
+                        <span><strong>Ikke partisk</strong> — Vi vurderer ikke, hvem der har ret, og vi tager ikke side</span>
+                    </li>
+                </ul>
+                <div class="mt-8 pt-8 border-t border-krf-steel/20">
+                    <h3 class="font-mono text-lg mb-4 uppercase tracking-wide">Hvad KRF ER</h3>
+                    <p class="text-krf-slate font-semibold text-lg">
+                        Neutral, systematisk analyse af kommunikationsmønstre med fokus på konsistens, ambiguitet og selvmodsigelser.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="priser" class="bg-white py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-serif text-4xl mb-4 text-center">Priser</h2>
+            <p class="text-xl text-krf-steel mb-16 text-center max-w-2xl mx-auto">
+                Transparent prissætning baseret på kompleksitet og omfang.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic -->
+                <div class="border-2 border-krf-steel/20 rounded-lg p-8 hover:border-krf-slate transition-colors">
+                    <h3 class="font-mono text-lg uppercase tracking-wide mb-2">Basis</h3>
+                    <div class="font-serif text-4xl mb-6">3.500 kr</div>
+                    <ul class="space-y-3 text-krf-steel mb-8">
+                        <li>✓ Op til 10 beskeder/mails</li>
+                        <li>✓ Tidslinje rekonstruktion</li>
+                        <li>✓ Sproglig analyse</li>
+                        <li>✓ Farvekodet rapport (PDF)</li>
+                        <li>✓ Levering inden 5-7 hverdage</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center border-2 border-krf-slate text-krf-slate px-6 py-3 rounded hover:bg-krf-slate hover:text-krf-cream transition-colors">
+                        Vælg Basis
+                    </a>
+                </div>
+
+                <!-- Standard -->
+                <div class="border-2 border-krf-slate rounded-lg p-8 relative bg-krf-slate text-krf-cream">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-krf-accent text-krf-cream px-4 py-1 rounded-full text-sm font-mono">
+                        MEST POPULÆR
+                    </div>
+                    <h3 class="font-mono text-lg uppercase tracking-wide mb-2">Standard</h3>
+                    <div class="font-serif text-4xl mb-6">6.500 kr</div>
+                    <ul class="space-y-3 text-krf-cream/90 mb-8">
+                        <li>✓ Op til 30 beskeder/mails</li>
+                        <li>✓ Tidslinje rekonstruktion</li>
+                        <li>✓ Dybdegående sproganalyse</li>
+                        <li>✓ Narrativ konsistensanalyse</li>
+                        <li>✓ Mønstergenkendelse</li>
+                        <li>✓ Farvekodet rapport (PDF)</li>
+                        <li>✓ Levering inden 7-10 hverdage</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center bg-krf-cream text-krf-slate px-6 py-3 rounded hover:bg-krf-cream/90 transition-colors">
+                        Vælg Standard
+                    </a>
+                </div>
+
+                <!-- Kompleks -->
+                <div class="border-2 border-krf-steel/20 rounded-lg p-8 hover:border-krf-slate transition-colors">
+                    <h3 class="font-mono text-lg uppercase tracking-wide mb-2">Kompleks</h3>
+                    <div class="font-serif text-4xl mb-6">Individuel</div>
+                    <ul class="space-y-3 text-krf-steel mb-8">
+                        <li>✓ 30+ beskeder/mails</li>
+                        <li>✓ Flere parter involveret</li>
+                        <li>✓ Længere tidsperiode</li>
+                        <li>✓ Alle forensiske metoder</li>
+                        <li>✓ Extern påvirkning analyse</li>
+                        <li>✓ Farvekodet rapport (PDF)</li>
+                        <li>✓ Levering aftales individuelt</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center border-2 border-krf-slate text-krf-slate px-6 py-3 rounded hover:bg-krf-slate hover:text-krf-cream transition-colors">
+                        Kontakt for tilbud
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-sm text-krf-steel mt-12 max-w-2xl mx-auto">
+                Alle priser er ekskl. moms. Betaling via faktura eller MobilePay. Materialet behandles fortroligt og slettes efter levering af rapport.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-serif text-4xl mb-8 text-center">Bestil din Klarhedsrapport</h2>
+            <p class="text-xl text-krf-steel text-center mb-12">
+                Udfyld formularen, så vender jeg tilbage inden for 24 timer.
+            </p>
+            
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block font-mono text-sm uppercase tracking-wide mb-2">Dit navn</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 border-krf-steel/20 rounded focus:border-krf-slate focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="email" class="block font-mono text-sm uppercase tracking-wide mb-2">Din email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-krf-steel/20 rounded focus:border-krf-slate focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="phone" class="block font-mono text-sm uppercase tracking-wide mb-2">Telefon (valgfrit)</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border-2 border-krf-steel/20 rounded focus:border-krf-slate focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="package" class="block font-mono text-sm uppercase tracking-wide mb-2">Hvilken pakke?</label>
+                    <select id="package" name="package" required class="w-full px-4 py-3 border-2 border-krf-steel/20 rounded focus:border-krf-slate focus:outline-none">
+                        <option value="">Vælg pakke...</option>
+                        <option value="basis">Basis (3.500 kr)</option>
+                        <option value="standard">Standard (6.500 kr)</option>
+                        <option value="kompleks">Kompleks (individuel pris)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block font-mono text-sm uppercase tracking-wide mb-2">Kort beskrivelse af din sag</label>
+                    <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border-2 border-krf-steel/20 rounded focus:border-krf-slate focus:outline-none" placeholder="Beskriv kort situationen og hvor mange beskeder/mails der er tale om..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-krf-slate text-krf-cream px-8 py-4 rounded text-lg hover:bg-krf-accent transition-colors">
+                    Send forespørgsel
+                </button>
+
+                <p class="text-sm text-krf-steel text-center">
+                    Alle henvendelser behandles fortroligt. Du modtager svar inden for 24 timer.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-krf-slate text-krf-cream/80 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="font-mono text-lg text-krf-cream mb-4">KLARHEDSRAPPORTEN</div>
+                    <p class="text-sm leading-relaxed">
+                        Kommunikationsforensik til mental suverænitet.
+                    </p>
+                </div>
+                <div>
+                    <div class="font-mono text-sm uppercase tracking-wide mb-4">Kontakt</div>
+                    <p class="text-sm">
+                        Alexander Birk<br>
+                        Email: alex@klarhedsrapporten.dk<br>
+                        CVR: [DIT CVR]
+                    </p>
+                </div>
+                <div>
+                    <div class="font-mono text-sm uppercase tracking-wide mb-4">Juridisk</div>
+                    <a href="/privatlivspolitik.html" class="text-sm hover:text-krf-cream transition-colors">Privatlivspolitik</a><br>
+                    <a href="/handelsbetingelser.html" class="text-sm hover:text-krf-cream transition-colors">Handelsbetingelser</a>
+                </div>
+            </div>
+            <div class="border-t border-krf-cream/20 pt-8 text-sm text-center">
+                <p>© 2026 Klarhedsrapporten. KRF™ er et registreret varemærke.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
